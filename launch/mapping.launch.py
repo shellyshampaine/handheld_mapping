@@ -83,6 +83,16 @@ def generate_launch_description():
             arguments=['-resolution', '0.05', '-publish_period_sec', '1.0'],
         ),
 
-        # 6) RViz
+        # 6) Nav2 navigation stack (equivalent to
+        #    `ros2 launch nav2_bringup navigation_launch.py use_sim_time:=false`)
+        IncludeLaunchDescription(
+            PythonLaunchDescriptionSource(os.path.join(
+                get_package_share_directory('nav2_bringup'), 'launch', 'navigation_launch.py')),
+            launch_arguments={
+                'use_sim_time': 'false',
+            }.items(),
+        ),
+
+        # 7) RViz
         Node(package='rviz2', executable='rviz2', name='rviz2', output='screen'),
     ])
