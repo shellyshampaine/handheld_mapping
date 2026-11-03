@@ -25,3 +25,8 @@ cd ~/ros2_ws/
 source /opt/ros/<rosdistro>/setup.bash
 colcon build --symlink-install
 ```
+
+Launch:
+```bash
+ros2 launch handheld_mapping mapping.launch.py
+```
