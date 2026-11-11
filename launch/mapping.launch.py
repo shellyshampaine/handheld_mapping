@@ -121,7 +121,6 @@ def generate_launch_description():
                 }.items(),
             ),
 
-            # 6) RViz
-            Node(package='rviz2', executable='rviz2', name='rviz2', output='screen'),
+            
         ]),
     ])
